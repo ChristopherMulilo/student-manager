@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+   <!-- <title>Getting Started: Serving Web Content</title> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title> Student Manager</title>
+    <!--<script th:scr="@{/script.js}"></script>
+    <link th:href="@{/styles.css}" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <script scr="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link th:href="@{/styles.css}" rel="stylesheet">
+</head>
+<body>
+<nav th:fragment="header">
+<ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="/students"> All Students</a></li>
+    <li class="nav-item"><a class="nav-link" href="/students/create"> Add Student</a></li>
+    <li class="nav-item"><a class="nav-link" href="/students/delete"> Delete Students</a></li>
+</ul>
+</nav>
+</body>
+</html>

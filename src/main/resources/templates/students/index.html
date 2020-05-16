@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:replace="fragments :: head"></header>
+<body class="container">
+
+<header th:replace="fragments :: header"></header>
+
+<table class="table table-striped">
+<thead>
+<tr> <th>Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Grade</th>
+    <th> Student Type</th>
+
+</tr></thead>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.id}"></td>
+        <td th:text="${student.firstName}"></td>
+        <td th:text="${student.lastName}"></td>
+        <td th:text="${student.gender}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.grade}"></td>
+       <td th:text="${student.studentCategory.sCategoryName}"></td>
+</tr>
+</table>
+
+</body>
+</html>
