@@ -1,10 +1,12 @@
 package com.nalituwe.student_manager.models;
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.Objects;
-
+@Service
 @MappedSuperclass //this annotation means the fields in this class must be pushed down to sub-classes TABLES
 public abstract class AbstractEntity {
     @Id

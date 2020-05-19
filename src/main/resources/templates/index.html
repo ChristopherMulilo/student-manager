@@ -3,11 +3,87 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body class="container">
+    <title>CSS Grid</title>
+    <style>
+    .wrapper{
+      display:grid;
+      grid-template-columns:1fr 2fr 1fr;
+      grid-auto-rows:minmax(100px, auto);
+      grid-gap:1em;
+      justify-items:stretch;
+      align-items:stretch;
+    }
 
-<h1> Student Manager</h1>
-<nav th:replace="fragments" :: header></nav>
-<!--<nav><ul><li><a href="/students"/>All students</li></ul></nav>-->
+    .wrapper > div{
+      background:#FFFFFF;
+      padding:1em;
+    }
+    .twrapper > div:nth-child(odd){
+      background:#ddd;
+    }
+
+    .box1{
+    grid-template-columns:1fr;
+      align-self:stretch;
+      grid-column:1/4;
+      grid-row:1/4
+      font-color:#FFFFFF;
+      background-color:#A52A2A;
+     text-align: center;
+      }
+
+      .box92{
+      align-self:stretch;
+      grid-column:1/4;
+      grid-row:1;
+      font-color:#FFFFFF;
+      background-color:#A52A2A;
+      text-align: center;
+
+      }
+
+    }
+.box2{
+grid-row:1;
+}
+
+.subwrapper{
+
+      text-align: center;
+      align-content:bottom;
+}
+
+  </style>
+
+    <link th:href="@{/styles.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <script scr="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link th:href="@{/styles.css}" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+
+    <!--<nav><ul><li><a href="/students"/>All students</li></ul></nav>-->
+    <div class="box box1"><h1> Student Management System</h1>
+
+        <div style="text-align:center"> <nav th:replace="fragments" :: header></nav></div>
+        <!--<div class="subwrapper">
+            <nav th:replace="fragments" :: pager>
+
+            </nav>
+        </div>-->
+    </div>
+
+    <div class="box box2"></div>
+    <div class="box box3">About the System<br/>
+        This is system is powered by Java, Springframework.
+    </div>
+    <div class="box box4">Login with</div>
+</div>
+
+
+
+
 </body>
 </html>

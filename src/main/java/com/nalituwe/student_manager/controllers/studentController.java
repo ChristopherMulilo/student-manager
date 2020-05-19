@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import com.nalituwe.student_manager.models.Student;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -17,6 +18,9 @@ public class studentController {
 
 @Autowired
 StudentCategoryRepository studentCategoryRepository;
+
+@Autowired
+Student updateStudent;
 
 @Autowired
 private StudentRepository studentRepository;
@@ -63,6 +67,18 @@ public String fetchStudents(Model model){
         }
         }
         return"redirect:";
+}
+
+@PostMapping("update")
+    public String updateProcessStudentForm(@RequestParam(required = false) int id,@ModelAttribute @Valid Student updateStudent ,Model model){
+     model.addAttribute("Title", "Update Student Info");
+     model.addAttribute("sUpdate",studentRepository.findById(id));
+if(studentRepository.findById(id)!= null){
+    studentRepository.save(updateStudent);
+
+}
+    return "redirect:";
+
 }
 
 

@@ -1,8 +1,10 @@
 package com.nalituwe.student_manager.models;
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.Entity;
 import javax.validation.constraints.Size;
-
+@Service
 @Entity
 public class StudentCategory extends AbstractEntity {
     private String sCategoryName;

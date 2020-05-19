@@ -8,11 +8,11 @@
 <p th:text="${errorMsg}" style="color:red;"></p>
 
 <form method="post" action="/students/create" >
-<!-- The name="" should match the actual fields in the model or entity class-->
-   <div class="form-group"><label> First Name:
+    <!-- The name="" should match the actual fields in the model or entity class-->
+    <div class="form-group"><label> First Name:
         <input th:field="${student.firstName}" class="form-control"/>
     </label>
-       <p class="error" th:errors="${student.firstName}"></p>
+        <p class="error" th:errors="${student.firstName}"></p>
     </div>
 
     <div class="form-group"><label>Last Name:
@@ -20,39 +20,38 @@
     </label>
         <p class="error" th:errors="${student.lastName}"></p>
     </div>
-    <div class="form-group"><!--label>Gender:-->
-        <label>Gender:
- <input th:field="${student.gender}" class="form-control"/>
+    <div class="form-group"><label>Gender:
+        <input th:field="${student.gender}" class="form-control"/>
     </label>
         <p class="error" th:errors="${student.gender}"></p>
     </div>
     <div class="form-group"><label>Email:
-        <input th:field="${student.email}" class="form-control"/>
+        <input th:field="${student.email}" th:value="${student.email}" class="form-control"/>
     </label>
         <p class="error" th:errors="${student.email}"></p>
     </div>
 
     <div class="form-group"><label>Grade:
-        <input th:field="${student.grade}" class="form-control"/>
+        <input th:field="${student.grade}" th:value="${student.grade}" class="form-control"/>
     </label>
         <p class="error" th:errors="${student.grade}"></p>
     </div>
 
     <div class="form-group">
         <label>Student Category:
-               <select th:field="${student.studentCategory}">
-                  <option th:each="studentCategory : ${categories}"
-                          th:value="${studentCategory.id}"
-                          th:text="${studentCategory.sCategoryName}">
-                  </option>
-               </select>
-    </label>
+            <select th:field="${student.studentCategory}">
+                <option th:each="studentCategory : ${categories}"
+                        th:value="${studentCategory.id}"
+                        th:text="${studentCategory.sCategoryName}">
+                </option>
+            </select>
+        </label>
         <p class="error" th:errors="${student.studentCategory}"></p>
     </div>
 
 
     <div class="form-group">
-<input type="submit" value="Create Student" class="btn btn-success"/>
+        <input type="submit" value="Create Student" class="btn btn-success"/>
     </div>
 </form>
 </body>

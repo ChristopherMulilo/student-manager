@@ -1,13 +1,15 @@
 package com.nalituwe.student_manager.models;
 
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.persistence.Entity;
-
+@Service
 @Entity
 public class Student extends AbstractEntity {
 
